@@ -1,33 +1,41 @@
 :root {
-  /* ===== الألوان الأساسية الثلاثة ===== */
-  --c-navy:          #151A45;   /* الكحلي — الخلفية الأساسية */
-  --c-red:           #C1272D;   /* الأحمر — التمييز الأساسي */
-  --c-black:         #0A0D24;   /* الأسود — العمق والتمييز الثانوي */
+  /* ===== الألوان الثلاثة ===== */
+  --c-white:  #FFFFFF;
+  --c-navy:   #151A45;
+  --c-red:    #C1272D;
 
   /* ===== مشتقات الكحلي ===== */
-  --c-navy-soft:     #1B2156;
-  --c-navy-2:        #212868;
-  --c-navy-3:        #2A3178;
-  --c-border:        #2E3680;
-  --c-border-soft:   #232A6E;
+  --c-navy-soft: #1B2156;
+  --c-navy-2:    #232A66;
+  --c-navy-3:    #2E3680;
 
-  /* ===== مشتقات الأحمر والأسود ===== */
-  --c-red-soft:      #A01F24;
-  --c-black-soft:    #05071A;
-  --c-black-2:       #0F1436;
+  /* ===== مشتقات الأحمر ===== */
+  --c-red-soft:  #A01F24;
 
-  /* ===== النصوص ===== */
-  --c-text:          #FFFFFF;
-  --c-text-soft:     #D5DAF0;
-  --c-text-muted:    #8891BE;
+  /* ===== الحدود على الخلفية البيضاء ===== */
+  --c-line:      #E3E6F0;
+  --c-line-mid:  #C9CFE1;
 
-  --font: 'Tajawal', 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
---font-en: 'Space Grotesk', 'Tajawal', system-ui, sans-serif;
+  /* ===== النصوص على الأبيض ===== */
+  --c-ink:       #151A45;
+  --c-ink-soft:  #3A4176;
+  --c-ink-muted: #6B7299;
 
+  /* ===== النصوص على الكحلي ===== */
+  --c-paper:       #FFFFFF;
+  --c-paper-soft:  #D5DAF0;
+  --c-paper-muted: #8891BE;
+
+  /* ===== خطوط ===== */
+  --font:    'Tajawal', 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --font-en: 'Space Grotesk', 'Tajawal', system-ui, sans-serif;
+
+  /* ===== أنصاف الأقطار ===== */
   --radius-sm: 8px;
   --radius:    12px;
-  --radius-lg: 16px;
+  --radius-lg: 18px;
 
+  /* ===== مسافات ===== */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -37,6 +45,11 @@
   --space-7: 48px;
   --space-8: 64px;
 
+  /* ===== تخطيط ===== */
   --container: 1160px;
   --navbar-h: 64px;
+
+  /* ===== ظلال ===== */
+  --shadow-1: 0 2px 8px rgba(21, 26, 69, 0.06);
+  --shadow-2: 0 8px 24px rgba(21, 26, 69, 0.10);
 }
