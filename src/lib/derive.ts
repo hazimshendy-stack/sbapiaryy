@@ -1,8 +1,15 @@
-/* طبقة الحسابات الآلية — كل الأرقام تُحسب من البيانات */
+/* ============================================================
+   المنحل — طبقة الحسابات الآلية
+   كل الأرقام تُحسب هنا من ملفات البيانات
+   ============================================================ */
 
 import type { Member, Team, TeamId } from '@/types';
 import { members } from '@/data/members';
 import { teams } from '@/data/teams';
+
+/* ============================================================
+   عمليات البحث الأساسية
+   ============================================================ */
 
 export function getTeamById(id: TeamId): Team | undefined {
   return teams.find((t) => t.id === id);
@@ -20,7 +27,9 @@ export function getTeamPoints(teamId: TeamId): number {
   return getMembersByTeam(teamId).reduce((sum, m) => sum + m.points, 0);
 }
 
-/* ---------- الليج العام ---------- */
+/* ============================================================
+   ترتيب الأعضاء — الليج العام
+   ============================================================ */
 
 export interface LeaderboardEntry {
   member: Member;
@@ -41,7 +50,13 @@ export function getLeaderboard(): LeaderboardEntry[] {
   }));
 }
 
-/* ---------- ليج الفريق ---------- */
+export function getTopMembers(limit = 5): LeaderboardEntry[] {
+  return getLeaderboard().slice(0, limit);
+}
+
+/* ============================================================
+   ترتيب داخل فريق واحد — ليج الفريق
+   ============================================================ */
 
 export function getTeamLeaderboard(teamId: TeamId): LeaderboardEntry[] {
   const teamMembers = getMembersByTeam(teamId);
@@ -56,7 +71,9 @@ export function getTeamLeaderboard(teamId: TeamId): LeaderboardEntry[] {
   }));
 }
 
-/* ---------- ترتيب الفرق ---------- */
+/* ============================================================
+   ترتيب الفرق — تلقائي بمجموع نقاط الأعضاء
+   ============================================================ */
 
 export interface TeamRank {
   team: Team;
@@ -67,20 +84,51 @@ export interface TeamRank {
 }
 
 export function getTeamRanking(): TeamRank[] {
-  const rows = teams.map((team) => {
+  const rows: TeamRank[] = teams.map((team) => {
     const teamMembers = getMembersByTeam(team.id);
     const totalPoints = teamMembers.reduce((sum, m) => sum + m.points, 0);
     const avgPoints =
       teamMembers.length === 0 ? 0 : Math.round(totalPoints / teamMembers.length);
-    return { team, memberCount: teamMembers.length, totalPoints, avgPoints, rank: 0 };
+
+    return {
+      team,
+      memberCount: teamMembers.length,
+      totalPoints,
+      avgPoints,
+      rank: 0, // يُملأ بعد الترتيب
+    };
   });
 
+  // الترتيب تلقائيًا حسب مجموع النقاط تنازليًا
   rows.sort((a, b) => b.totalPoints - a.totalPoints);
-  rows.forEach((r, i) => { r.rank = i + 1; });
+
+  // إسناد رقم المركز
+  rows.forEach((row, index) => {
+    row.rank = index + 1;
+  });
+
   return rows;
 }
 
-/* ---------- إحصائيات عامة ---------- */
+/* ============================================================
+   ترتيب العضو
+   ============================================================ */
+
+export function getMemberRank(memberId: string): number {
+  const board = getLeaderboard();
+  const entry = board.find((e) => e.member.id === memberId);
+  return entry ? entry.rank : 0;
+}
+
+export function getMemberTeamRank(memberId: string, teamId: TeamId): number {
+  const board = getTeamLeaderboard(teamId);
+  const entry = board.find((e) => e.member.id === memberId);
+  return entry ? entry.rank : 0;
+}
+
+/* ============================================================
+   إحصائيات عامة
+   ============================================================ */
 
 export interface OrgStats {
   members: number;
@@ -91,29 +139,13 @@ export interface OrgStats {
 
 export function getOrgStats(): OrgStats {
   const totalPoints = members.reduce((sum, m) => sum + m.points, 0);
-  const avgPoints = members.length === 0 ? 0 : Math.round(totalPoints / members.length);
+  const avgPoints =
+    members.length === 0 ? 0 : Math.round(totalPoints / members.length);
+
   return {
     members: members.length,
     teams: teams.length,
     totalPoints,
     avgPoints,
   };
-}
-
-/* ---------- عضو ---------- */
-
-export function getMemberRank(memberId: string): number {
-  const board = getLeaderboard();
-  const entry = board.find((e) => e.member.id === memberId);
-  return entry ? entry.rank : 0;
-}
-/* ---------- أعلى الأعضاء ---------- */
-
-export function getTopMembers(limit = 5): LeaderboardEntry[] {
-  return getLeaderboard().slice(0, limit);
-}
-export function getMemberTeamRank(memberId: string, teamId: TeamId): number {
-  const board = getTeamLeaderboard(teamId);
-  const entry = board.find((e) => e.member.id === memberId);
-  return entry ? entry.rank : 0;
 }
