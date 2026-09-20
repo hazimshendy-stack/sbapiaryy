@@ -21,7 +21,7 @@ export function HomePage() {
           <div className="section-head__eyebrow">{activeSeason.label}</div>
 
           <h1 className="hero__title">
-            منحل <em>Resala STEM</em> Sub Branches
+            منحل <em>{site.organization}</em> Sub Branches
           </h1>
 
           <p className="hero__desc">
