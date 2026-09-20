@@ -641,6 +641,43 @@ table.data .muted { color: var(--c-ink-muted); }
    ============================================================ */
 
 @media (max-width: 720px) {
+
+   /* ============================================================
+   بطاقة الفريق — صف العنوان + المركز
+   ============================================================ */
+
+.team-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.team-card__rank {
+  font-family: var(--font-en);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--c-paper-soft);
+  background: var(--c-navy-2);
+  border: 1px solid var(--c-navy-3);
+  padding: 3px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+/* المركز الأول — أحمر للتمييز */
+a.card:hover .team-card__rank {
+  border-color: var(--c-red);
+}
+
+/* الفريق صاحب المركز الأول — إطار أحمر */
+.grid a.card:first-child .team-card__rank {
+  background: var(--c-red);
+  border-color: var(--c-red);
+  color: #fff;
+}
   .brand { font-size: 1rem; }
   .hero  { padding-block: var(--space-7) var(--space-5); }
 }
