@@ -14,16 +14,20 @@ export function HomePage() {
   return (
     <>
       <section className="hero">
-        <div className="container">
-          <div className="section-head__eyebrow">{activeSeason.label} · {activeSeason.theme}</div>
-          <h1 className="hero__title">فريق واحد. <em>سبع مجموعات.</em> موسم كامل من البناء.</h1>
-          <p className="hero__desc">{site.description}</p>
-          <div className="hero__actions">
-            <Link to="/members" className="btn btn--primary">تصفح الأعضاء</Link>
-            <Link to="/league" className="btn btn--ghost">الترتيب العام</Link>
-          </div>
-        </div>
-      </section>
+  <div className="container">
+    <div className="section-head__eyebrow">{activeSeason.label}</div>
+    <h1 className="hero__title">
+      منحل <em>Resala STEM</em> Sub Branches
+    </h1>
+    <p className="hero__desc">
+      بيتنا الرقمي. كل الأعضاء، كل الفرق، كل النقاط — في مكان واحد.
+    </p>
+    <div className="hero__actions">
+      <Link to="/members" className="btn btn--primary">تصفح الأعضاء</Link>
+      <Link to="/league" className="btn btn--ghost">الترتيب العام</Link>
+    </div>
+  </div>
+</section>
 
       <section className="container section--tight">
         <StatRow>
