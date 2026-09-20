@@ -5,7 +5,6 @@ import {
   getMemberTeamRank,
   getTeamById,
 } from '@/lib/derive';
-import { Avatar } from '@/components/ui/Avatar';
 import { Stat, StatRow } from '@/components/ui/Stat';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { NotFoundPage } from './NotFoundPage';
@@ -20,7 +19,6 @@ export function MemberProfilePage() {
   return (
     <div className="container section--tight">
       <div className="profile">
-        <Avatar name={member.name} size={96} />
         <div className="profile__main">
           <h1 className="profile__name">{member.name}</h1>
           <div className="profile__role">{member.role}</div>
@@ -44,7 +42,7 @@ export function MemberProfilePage() {
           </div>
           <div className="kv">
             <span className="kv__k">النقاط</span>
-            <span className="kv__v" style={{ color: 'var(--c-red)' }}>{member.points}</span>
+            <span className="kv__v">{member.points}</span>
           </div>
           <div className="kv">
             <span className="kv__k">الانضمام</span>
