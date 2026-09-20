@@ -9,14 +9,13 @@ export type TeamId =
 
 export interface Team {
   id: TeamId;
-  name: string;        // دائماً بالإنجليزية
-  description: string; // بالعربي
+  name: string;   // دائماً بالإنجليزية
 }
 
 export interface Member {
   id: string;
-  name: string;        // الاسم بالعربي
-  role: string;        // الدور بالعربي
+  name: string;
+  role: string;
   teamIds: TeamId[];
   joinedSeason: number;
   points: number;
