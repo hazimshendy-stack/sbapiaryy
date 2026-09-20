@@ -4,7 +4,6 @@ import { getOrgStats, getTeamRanking, getTopMembers } from '@/lib/derive';
 import { Stat, StatRow } from '@/components/ui/Stat';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { TeamCard } from '@/components/team/TeamCard';
-import { Avatar } from '@/components/ui/Avatar';
 
 export function HomePage() {
   const stats = getOrgStats();
@@ -13,9 +12,7 @@ export function HomePage() {
 
   return (
     <>
-      {/* ============================================================
-          الهيرو — بسيط وشبابي
-          ============================================================ */}
+      {/* الهيرو */}
       <section className="hero">
         <div className="container">
           <div className="section-head__eyebrow">{activeSeason.label}</div>
@@ -35,9 +32,7 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* ============================================================
-          الإحصائيات العامة
-          ============================================================ */}
+      {/* الإحصائيات */}
       <section className="container section--tight">
         <StatRow>
           <Stat value={stats.members} label="الأعضاء" />
@@ -47,14 +42,12 @@ export function HomePage() {
         </StatRow>
       </section>
 
-      {/* ============================================================
-          ترتيب الفرق
-          ============================================================ */}
+      {/* ترتيب الفرق */}
       <section className="container section">
         <SectionHeader
           eyebrow="ترتيب الفرق"
           title="الفرق حسب النقاط"
-          description="مجموع نقاط الأعضاء في كل فريق."
+          description="مجموع نقاط الأعضاء في كل فريق. الترتيب تلقائي."
           action={<Link to="/teams" className="btn btn--ghost">كل الفرق</Link>}
         />
         <div className="grid">
@@ -64,9 +57,7 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* ============================================================
-          أعلى الأعضاء
-          ============================================================ */}
+      {/* أعلى الأعضاء */}
       <section className="container section">
         <SectionHeader
           eyebrow="الترتيب العام"
@@ -91,10 +82,7 @@ export function HomePage() {
                     {e.rank}
                   </td>
                   <td>
-                    <Link to={'/members/' + e.member.id} className="row">
-                      <Avatar name={e.member.name} size={32} />
-                      <span>{e.member.name}</span>
-                    </Link>
+                    <Link to={'/members/' + e.member.id}>{e.member.name}</Link>
                   </td>
                   <td className="muted small">{e.member.role}</td>
                   <td>
