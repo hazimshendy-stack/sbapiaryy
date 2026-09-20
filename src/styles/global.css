@@ -1,6 +1,6 @@
 /* ============================================================
    المنحل — الأنماط العامة
-   خلفية بيضاء · بطاقات كحلية · لمسات نبيتي
+   أبيض + كحلي فقط · النبيتي للاختيار النشط فقط
    ============================================================ */
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -36,18 +36,15 @@ a  { color: inherit; text-decoration: none; }
 img, svg { display: block; max-width: 100%; }
 button, input, select, textarea { font: inherit; color: inherit; }
 
-::selection { background: var(--c-red); color: #fff; }
+::selection { background: var(--c-navy); color: #fff; }
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: var(--c-white); }
-::-webkit-scrollbar-thumb {
-  background: var(--c-line-mid);
-  border-radius: 999px;
-}
+::-webkit-scrollbar-thumb { background: var(--c-line-mid); border-radius: 999px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--c-navy-3); }
 
 /* ============================================================
-   الهيكل العام
+   الهيكل
    ============================================================ */
 
 .app-shell { display: flex; flex-direction: column; min-height: 100vh; }
@@ -62,7 +59,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 @media (max-width: 640px) { .container { padding-inline: var(--space-4); } }
 
 /* ============================================================
-   النافبار (كحلي)
+   النافبار (كحلي) — النبيتي هنا فقط
    ============================================================ */
 
 .navbar {
@@ -103,7 +100,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .nav-links::-webkit-scrollbar { display: none; }
 
 .nav-link {
-  padding: 6px 14px;
+  padding: 7px 16px;
   border-radius: var(--radius-sm);
   font-size: 0.88rem;
   font-weight: 700;
@@ -115,6 +112,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
   color: var(--c-paper);
   background: var(--c-navy-2);
 }
+
+/* ←←← الاختيار النشط: مربع نبيتي ←←← */
 .nav-link.is-active {
   color: #fff;
   background: var(--c-red);
@@ -139,7 +138,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .section-head__eyebrow {
   font-size: 0.75rem;
   font-weight: 800;
-  color: var(--c-red);
+  color: var(--c-navy);
   letter-spacing: 0.02em;
   margin-bottom: 4px;
 }
@@ -168,7 +167,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 .hero__title em {
   font-style: normal;
-  color: var(--c-red);
+  color: var(--c-navy-3);
 }
 
 .hero__desc {
@@ -186,7 +185,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 
 /* ============================================================
-   الأزرار
+   الأزرار — كلها كحلية
    ============================================================ */
 
 .btn {
@@ -203,11 +202,11 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 
 .btn--primary {
-  background: var(--c-red);
+  background: var(--c-navy);
   color: #fff;
-  border-color: var(--c-red);
+  border-color: var(--c-navy);
 }
-.btn--primary:hover { background: var(--c-red-soft); border-color: var(--c-red-soft); }
+.btn--primary:hover { background: var(--c-navy-3); border-color: var(--c-navy-3); }
 
 .btn--ghost {
   background: var(--c-white);
@@ -237,7 +236,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 a.card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-2);
-  border-color: var(--c-red);
+  border-color: var(--c-navy-3);
 }
 
 .card__title { font-size: 1rem; font-weight: 800; color: var(--c-paper); }
@@ -256,7 +255,7 @@ a.card:hover {
 .grid--wide { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
 
 /* ============================================================
-   الأفاتار (كحلي داكن)
+   الأفاتار
    ============================================================ */
 
 .avatar {
@@ -308,7 +307,7 @@ a.card:hover {
 }
 
 /* ============================================================
-   بطاقة العضو (كحلية)
+   بطاقة العضو
    ============================================================ */
 
 .member-card {
@@ -335,7 +334,7 @@ a.card:hover {
 }
 
 /* ============================================================
-   بطاقة الفريق (كحلية)
+   بطاقة الفريق
    ============================================================ */
 
 .team-card__head {
@@ -428,19 +427,19 @@ table.data tbody tr:hover { background: #F6F7FB; }
   color: var(--c-ink-muted);
   width: 48px;
 }
-.rank--1 { color: var(--c-red); }
-.rank--2 { color: var(--c-ink); }
+.rank--1 { color: var(--c-navy); font-weight: 900; }
+.rank--2 { color: var(--c-navy-soft); }
 .rank--3 { color: var(--c-ink-soft); }
 
 .points {
   font-family: var(--font-en);
   font-weight: 700;
-  color: var(--c-red);
+  color: var(--c-navy);
   letter-spacing: -0.02em;
 }
 
 /* ============================================================
-   الأدوات: البحث والفلاتر
+   الأدوات
    ============================================================ */
 
 .toolbar {
@@ -463,10 +462,11 @@ table.data tbody tr:hover { background: #F6F7FB; }
   transition: border-color 0.15s;
 }
 .input::placeholder { color: var(--c-ink-muted); }
-.input:focus { border-color: var(--c-red); }
+.input:focus { border-color: var(--c-navy); }
 
 .chips { display: flex; gap: 6px; flex-wrap: wrap; }
 
+/* ←←← الشرائح النشطة: مربع نبيتي (نفس منطق النافبار) ←←← */
 .chip {
   padding: 7px 16px;
   border-radius: 999px;
@@ -487,7 +487,7 @@ table.data tbody tr:hover { background: #F6F7FB; }
 }
 
 /* ============================================================
-   الشارات (badges)
+   الشارات
    ============================================================ */
 
 .badge {
@@ -505,7 +505,6 @@ table.data tbody tr:hover { background: #F6F7FB; }
   white-space: nowrap;
 }
 
-/* شارات داخل الجداول البيضاء */
 table.data .badge {
   background: var(--c-white);
   color: var(--c-navy);
@@ -538,7 +537,7 @@ table.data .badge {
   letter-spacing: -0.02em;
 }
 .profile__role {
-  color: var(--c-red);
+  color: var(--c-paper-soft);
   font-weight: 700;
   margin-top: 6px;
 }
@@ -614,7 +613,7 @@ table.data .badge {
   font-size: clamp(4rem, 14vw, 8rem);
   font-weight: 700;
   line-height: 1;
-  color: var(--c-red);
+  color: var(--c-navy);
   letter-spacing: -0.04em;
 }
 
