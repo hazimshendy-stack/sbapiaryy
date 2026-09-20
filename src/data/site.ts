@@ -1,10 +1,10 @@
 import type { SiteConfig, Season } from '@/types';
 
 export const site: SiteConfig = {
-  name: 'المنحل',
+  name: 'sbapiaryy',
   tagline: 'Resala STEM Sub Branches — الموسم السابع',
   description:
-    'المنصة الرسمية لفروع Resala STEM. فريق واحد، سبع مجموعات، موسم كامل من العمل والتعليم والعطاء.',
+    'المنصة الرسمية لمتابعة Resala STEM Sub Branches.',
   organization: 'Resala STEM',
   season: 'الموسم السابع',
   email: 'hello@resala-stem.org',
