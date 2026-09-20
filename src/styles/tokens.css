@@ -1,19 +1,28 @@
 :root {
-  --c-navy:          #151A45;
+  /* ===== الألوان الأساسية الثلاثة ===== */
+  --c-navy:          #151A45;   /* الكحلي — الخلفية الأساسية */
+  --c-red:           #C1272D;   /* الأحمر — التمييز الأساسي */
+  --c-black:         #0A0D24;   /* الأسود — العمق والتمييز الثانوي */
+
+  /* ===== مشتقات الكحلي ===== */
   --c-navy-soft:     #1B2156;
   --c-navy-2:        #212868;
   --c-navy-3:        #2A3178;
   --c-border:        #2E3680;
   --c-border-soft:   #232A6E;
 
-  --c-red:           #C1272D;
+  /* ===== مشتقات الأحمر والأسود ===== */
   --c-red-soft:      #A01F24;
+  --c-black-soft:    #05071A;
+  --c-black-2:       #0F1436;
 
+  /* ===== النصوص ===== */
   --c-text:          #FFFFFF;
   --c-text-soft:     #D5DAF0;
   --c-text-muted:    #8891BE;
 
-  --font: 'Cairo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font: 'Tajawal', 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+--font-en: 'Space Grotesk', 'Tajawal', system-ui, sans-serif;
 
   --radius-sm: 8px;
   --radius:    12px;
