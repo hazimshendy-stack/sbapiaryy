@@ -26,12 +26,8 @@ export function TeamDetailPage() {
   return (
     <div className="container section--tight">
       <div className="profile">
-        <span className="team-card__mono" style={{ width: 80, height: 80, fontSize: '1.4rem', borderRadius: 16 }} aria-hidden="true">
-          {team.name.slice(0, 2).toUpperCase()}
-        </span>
         <div className="profile__main">
           <h1 className="profile__name">{team.name}</h1>
-          <p className="profile__bio">{team.description}</p>
         </div>
       </div>
 
