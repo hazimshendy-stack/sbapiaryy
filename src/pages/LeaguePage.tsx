@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { teams } from '@/data/teams';
 import type { TeamId } from '@/types';
 import { getLeaderboard, getOrgStats, getTeamLeaderboard } from '@/lib/derive';
-import { Avatar } from '@/components/ui/Avatar';
 import { PageHeader } from '@/components/ui/PageHeader';
 import { Stat, StatRow } from '@/components/ui/Stat';
 import { SectionHeader } from '@/components/ui/SectionHeader';
@@ -71,10 +70,7 @@ export function LeaguePage() {
                 <tr key={e.member.id}>
                   <td className={'rank rank--' + (e.rank <= 3 ? e.rank : '')}>{e.rank}</td>
                   <td>
-                    <Link to={'/members/' + e.member.id} className="row">
-                      <Avatar name={e.member.name} size={32} />
-                      <span>{e.member.name}</span>
-                    </Link>
+                    <Link to={'/members/' + e.member.id}>{e.member.name}</Link>
                   </td>
                   <td className="muted small">{e.member.role}</td>
                   <td>
