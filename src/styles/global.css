@@ -437,6 +437,113 @@ table.data tbody tr:hover { background: var(--c-navy-2); }
   border-radius: var(--radius);
   color: var(--c-text-muted);
 }
+/* ============================================================
+   استخدام اللون الثالث (الأسود) للعمق والتمييز
+   ============================================================ */
+
+/* النافبار — خلفية سوداء لتمييزه عن المحتوى */
+.navbar {
+  background: var(--c-black);
+}
+
+/* الفوتر — خلفية سوداء */
+.footer {
+  background: var(--c-black);
+}
+
+/* الهيرو — تدرج بين الأسود والكحلي مع لمسة حمراء */
+.hero {
+  background:
+    radial-gradient(900px 500px at 90% 0%, rgba(193, 39, 45, 0.10), transparent 60%),
+    linear-gradient(180deg, var(--c-black) 0%, var(--c-navy) 100%);
+  border-radius: var(--radius-lg);
+}
+
+/* البطاقات — خلفية كحلية أغمق قليلًا */
+.card {
+  background: var(--c-black-2);
+}
+
+/* الإحصائيات — خلفية أغمق */
+.stat {
+  background: var(--c-black-2);
+}
+
+/* رؤوس الجداول — سوداء */
+table.data th {
+  background: var(--c-black);
+}
+
+/* جدول البيانات — تفاعل بالأسود */
+table.data tbody tr:hover {
+  background: var(--c-black-2);
+}
+
+/* الشرائح المفلترة — خلفية سوداء */
+.chip {
+  background: transparent;
+}
+
+.chip.is-active {
+  background: var(--c-red);
+  border-color: var(--c-red);
+}
+
+/* حقول البحث — خلفية سوداء */
+.input {
+  background: var(--c-black-2);
+}
+
+/* الأفاتار — خلفية سوداء */
+.avatar {
+  background: var(--c-black-2);
+  border-color: var(--c-border);
+}
+
+/* مونوجرام الفريق — خلفية سوداء */
+.team-card__mono {
+  background: var(--c-black-2);
+  color: #fff;
+}
+
+/* الشارات — خلفية سوداء */
+.badge {
+  background: var(--c-black-2);
+}
+
+/* الجداول — الغلاف */
+.table-wrap {
+  background: var(--c-black-2);
+}
+
+/* الحالة الفارغة */
+.empty {
+  background: var(--c-black-2);
+}
+
+/* الروابط النشطة في النافبار — تبقى بالأحمر */
+.nav-link.is-active {
+  background: var(--c-red);
+}
+
+/* الأزرار الشفافة */
+.btn--ghost {
+  background: transparent;
+  border-color: var(--c-border);
+}
+
+.btn--ghost:hover {
+  background: var(--c-black-2);
+  color: #fff;
+  border-color: var(--c-red);
+}
+
+/* صندوق البروفايل */
+.profile {
+  background: var(--c-black-2);
+}
+
+
 
 .notfound { display: grid; place-items: center; text-align: center; padding-block: var(--space-8); }
 .notfound__code {
@@ -464,4 +571,96 @@ table.data tbody tr:hover { background: var(--c-navy-2); }
 @media (max-width: 720px) {
   .brand { font-size: 1rem; }
   .hero { padding-block: var(--space-7) var(--space-5); }
+}
+
+/* ============================================================
+   الخطوط الشبابية — Tajawal (عربي) + Space Grotesk (إنجليزي/أرقام)
+   كتلة واحدة مدمجة لتجنب التعارض
+   ============================================================ */
+
+/* ---------- أساس عام ---------- */
+
+body {
+  letter-spacing: -0.01em;
+}
+
+h1, h2, h3 {
+  font-family: var(--font);   /* Tajawal أولاً، ثم Space Grotesk */
+}
+
+h1 { font-weight: 900; letter-spacing: -0.03em; }
+h2 { font-weight: 800; letter-spacing: -0.02em; }
+h3 { font-weight: 700; }
+
+/* ---------- العناوين العامة ---------- */
+
+.hero__title {
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.card__title {
+  font-weight: 800;
+}
+
+.member-card__name {
+  font-weight: 800;
+  font-family: 'Tajawal', 'Space Grotesk', sans-serif;
+}
+
+.profile__name {
+  font-family: 'Tajawal', 'Space Grotesk', sans-serif;
+  font-weight: 900;
+}
+
+/* ---------- النافبار والفوتر ---------- */
+
+.brand {
+  font-family: var(--font-en);   /* Space Grotesk للاسم الإنجليزي/العربي */
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.nav-link {
+  font-weight: 700;
+}
+
+/* ---------- الأزرار ---------- */
+
+.btn {
+  font-weight: 700;
+}
+
+/* ---------- الأرقام والإحصائيات (Space Grotesk) ---------- */
+
+.stat__value,
+.points,
+.rank,
+.team-card__stat-value {
+  font-family: var(--font-en);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- عناصر الفرق (Space Grotesk) ---------- */
+
+.team-card__mono,
+.team-card__stat-label {
+  font-family: var(--font-en);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- الشارات (badges) ---------- */
+
+.badge {
+  font-family: var(--font-en);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* ---------- رؤوس الجداول ---------- */
+
+table.data th {
+  font-weight: 800;
 }
