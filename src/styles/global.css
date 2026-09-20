@@ -1,5 +1,6 @@
 /* ============================================================
-   المنحل — الأنماط العامة (خلفية بيضاء / مربعات كحلية / نبيتي)
+   المنحل — الأنماط العامة
+   خلفية بيضاء · بطاقات كحلية · لمسات نبيتي
    ============================================================ */
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -45,7 +46,9 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 ::-webkit-scrollbar-thumb:hover { background: var(--c-navy-3); }
 
-/* ---------- الهيكل ---------- */
+/* ============================================================
+   الهيكل العام
+   ============================================================ */
 
 .app-shell { display: flex; flex-direction: column; min-height: 100vh; }
 .app-main  { flex: 1; }
@@ -58,7 +61,9 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 @media (max-width: 640px) { .container { padding-inline: var(--space-4); } }
 
-/* ---------- النافبار (كحلي على خلفية بيضاء) ---------- */
+/* ============================================================
+   النافبار (كحلي)
+   ============================================================ */
 
 .navbar {
   position: sticky;
@@ -115,10 +120,12 @@ button, input, select, textarea { font: inherit; color: inherit; }
   background: var(--c-red);
 }
 
-/* ---------- الأقسام ---------- */
+/* ============================================================
+   الأقسام
+   ============================================================ */
 
-.section       { padding-block: var(--space-7); }
-.section--tight{ padding-block: var(--space-5); }
+.section        { padding-block: var(--space-7); }
+.section--tight { padding-block: var(--space-5); }
 
 .section-head {
   display: flex;
@@ -144,11 +151,12 @@ button, input, select, textarea { font: inherit; color: inherit; }
   margin-top: 6px;
 }
 
-/* ---------- الهيرو (أبيض مع لمسات) ---------- */
+/* ============================================================
+   الهيرو (أبيض)
+   ============================================================ */
 
 .hero {
   padding-block: var(--space-8) var(--space-6);
-  position: relative;
 }
 
 .hero__title {
@@ -177,7 +185,9 @@ button, input, select, textarea { font: inherit; color: inherit; }
   margin-top: var(--space-6);
 }
 
-/* ---------- الأزرار ---------- */
+/* ============================================================
+   الأزرار
+   ============================================================ */
 
 .btn {
   display: inline-flex;
@@ -209,7 +219,9 @@ button, input, select, textarea { font: inherit; color: inherit; }
   color: #fff;
 }
 
-/* ---------- البطاقات (كحلية) ---------- */
+/* ============================================================
+   البطاقات (كحلية)
+   ============================================================ */
 
 .card {
   position: relative;
@@ -232,7 +244,9 @@ a.card:hover {
 .card__meta  { font-size: 0.82rem; color: var(--c-paper-muted); margin-top: 2px; }
 .card__body  { margin-top: 10px; font-size: 0.9rem; color: var(--c-paper-soft); line-height: 1.65; }
 
-/* ---------- الشبكة ---------- */
+/* ============================================================
+   الشبكة
+   ============================================================ */
 
 .grid {
   display: grid;
@@ -241,14 +255,16 @@ a.card:hover {
 }
 .grid--wide { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
 
-/* ---------- الأفاتار ---------- */
+/* ============================================================
+   الأفاتار (كحلي داكن)
+   ============================================================ */
 
 .avatar {
   display: inline-grid;
   place-items: center;
   border-radius: 50%;
-  font-weight: 700;
   font-family: var(--font-en);
+  font-weight: 700;
   flex-shrink: 0;
   background: var(--c-navy-2);
   color: var(--c-paper);
@@ -256,7 +272,9 @@ a.card:hover {
   user-select: none;
 }
 
-/* ---------- الإحصائيات (كحلية) ---------- */
+/* ============================================================
+   الإحصائيات (كحلية)
+   ============================================================ */
 
 .stat-row {
   display: grid;
@@ -289,7 +307,9 @@ a.card:hover {
   color: var(--c-paper-soft);
 }
 
-/* ---------- بطاقة العضو (كحلية) ---------- */
+/* ============================================================
+   بطاقة العضو (كحلية)
+   ============================================================ */
 
 .member-card {
   display: flex;
@@ -314,7 +334,9 @@ a.card:hover {
   margin-top: 10px;
 }
 
-/* ---------- بطاقة الفريق (كحلية) ---------- */
+/* ============================================================
+   بطاقة الفريق (كحلية)
+   ============================================================ */
 
 .team-card__head {
   display: flex;
@@ -359,7 +381,9 @@ a.card:hover {
   margin-top: 2px;
 }
 
-/* ---------- الجداول (بيضاء داخل غلاف كحلي خفيف) ---------- */
+/* ============================================================
+   الجداول (بيضاء برأس كحلي)
+   ============================================================ */
 
 .table-wrap {
   border: 1px solid var(--c-line);
@@ -404,7 +428,7 @@ table.data tbody tr:hover { background: #F6F7FB; }
   color: var(--c-ink-muted);
   width: 48px;
 }
-.rank--1 { color: var(--c-red); font-weight: 700; }
+.rank--1 { color: var(--c-red); }
 .rank--2 { color: var(--c-ink); }
 .rank--3 { color: var(--c-ink-soft); }
 
@@ -415,7 +439,9 @@ table.data tbody tr:hover { background: #F6F7FB; }
   letter-spacing: -0.02em;
 }
 
-/* ---------- الأدوات (البحث + الفلاتر) ---------- */
+/* ============================================================
+   الأدوات: البحث والفلاتر
+   ============================================================ */
 
 .toolbar {
   display: flex;
@@ -460,7 +486,9 @@ table.data tbody tr:hover { background: #F6F7FB; }
   color: #fff;
 }
 
-/* ---------- الشارات (badges) ---------- */
+/* ============================================================
+   الشارات (badges)
+   ============================================================ */
 
 .badge {
   display: inline-flex;
@@ -477,15 +505,16 @@ table.data tbody tr:hover { background: #F6F7FB; }
   white-space: nowrap;
 }
 
-/* داخل الجداول أو الأماكن البيضاء */
-table .badge,
-.row-on-light .badge {
+/* شارات داخل الجداول البيضاء */
+table.data .badge {
   background: var(--c-white);
   color: var(--c-navy);
   border-color: var(--c-line-mid);
 }
 
-/* ---------- الملف الشخصي (كحلي) ---------- */
+/* ============================================================
+   الملف الشخصي (كحلي)
+   ============================================================ */
 
 .profile {
   display: flex;
@@ -501,6 +530,7 @@ table .badge,
 }
 
 .profile__main { flex: 1; min-width: 260px; }
+
 .profile__name {
   color: var(--c-paper);
   font-weight: 900;
@@ -533,7 +563,9 @@ table .badge,
   color: var(--c-paper);
 }
 
-/* ---------- الفوتر (كحلي) ---------- */
+/* ============================================================
+   الفوتر (كحلي)
+   ============================================================ */
 
 .footer {
   margin-top: var(--space-8);
@@ -557,7 +589,9 @@ table .badge,
 
 .footer .brand { color: var(--c-paper); }
 
-/* ---------- الحالة الفارغة و 404 ---------- */
+/* ============================================================
+   الحالة الفارغة و 404
+   ============================================================ */
 
 .empty {
   padding: var(--space-7) var(--space-5);
@@ -584,12 +618,14 @@ table .badge,
   letter-spacing: -0.04em;
 }
 
-/* ---------- أدوات مساعدة ---------- */
+/* ============================================================
+   أدوات مساعدة
+   ============================================================ */
 
-.muted { color: var(--c-ink-muted); }
-.soft  { color: var(--c-ink-soft); }
-.small { font-size: 0.82rem; }
-.nowrap{ white-space: nowrap; }
+.muted  { color: var(--c-ink-muted); }
+.soft   { color: var(--c-ink-soft); }
+.small  { font-size: 0.82rem; }
+.nowrap { white-space: nowrap; }
 
 .mt-2 { margin-top: var(--space-2); }
 .mt-3 { margin-top: var(--space-3); }
@@ -600,9 +636,10 @@ table .badge,
 .stack { display: flex; flex-direction: column; gap: var(--space-4); }
 .row   { display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
 
-/* ---------- استثناءات داخل المربعات الكحلية ---------- */
+/* ============================================================
+   تصحيحات داخل الكتل الكحلية
+   ============================================================ */
 
-/* داخل البطاقات الكحلية، النصوص الفاتحة */
 .card .muted,
 .profile .muted {
   color: var(--c-paper-muted);
@@ -612,13 +649,13 @@ table .badge,
   color: var(--c-paper-soft);
 }
 
-/* داخل الجداول البيضاء، احتفظ بالنصوص الداكنة */
 table.data .muted { color: var(--c-ink-muted); }
-table.data .small { font-size: 0.82rem; }
 
-/* ---------- الجوال ---------- */
+/* ============================================================
+   الجوال
+   ============================================================ */
 
 @media (max-width: 720px) {
   .brand { font-size: 1rem; }
-  .hero { padding-block: var(--space-7) var(--space-5); }
+  .hero  { padding-block: var(--space-7) var(--space-5); }
 }
