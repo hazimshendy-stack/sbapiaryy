@@ -107,7 +107,11 @@ export function getMemberRank(memberId: string): number {
   const entry = board.find((e) => e.member.id === memberId);
   return entry ? entry.rank : 0;
 }
+/* ---------- أعلى الأعضاء ---------- */
 
+export function getTopMembers(limit = 5): LeaderboardEntry[] {
+  return getLeaderboard().slice(0, limit);
+}
 export function getMemberTeamRank(memberId: string, teamId: TeamId): number {
   const board = getTeamLeaderboard(teamId);
   const entry = board.find((e) => e.member.id === memberId);
